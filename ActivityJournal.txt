@@ -1,0 +1,103 @@
+SWEN-250 Document Analysis Journal
+
+Implement these functions in the order below.
+
+Your name: Miguel Reyes
+
+================================================================
+create_node
+Start
+Estimated Time	00h : 30m
+Plan:
+(Order of implementation, testing approach, etc.)
+Create a malloc for node that is being returned.
+Set the nodes previous node to NULL because it is the first.
+Increment word count by 1 and create a malloc that is assigned
+to the current nodes unique word. Copy the word thats passed in
+into the malloc assigned to unique word and return the node. 
+Complete
+Actual Time	00h : 15m
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+I had to go over structs and what they were and how to access its
+data. Instructions were very straight forward so not much trouble.
+
+================================================================
+add_node_at_head
+Start
+Estimated Time	 01h : 00m
+Plan:
+(Order of implementation, testing approach, etc.)
+Check that the parameters passed in are not Null.
+Create a new node. Update the head node of the linked list. As
+well as the tail node and current node.
+Complete
+Actual Time	01h : 00m
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+I had to come back and make adjustments. I forgot to update 
+the working node pointer to point to the next head. So it was
+failing to clear the linked list.
+================================================================
+clear_linked_list
+Start
+Estimated Time	00h : 30m
+Plan:
+(Order of implementation, testing approach, etc.)
+Have a counter to count how many nodes were deleted.
+Use a working pointer that points to the lists current head node
+and a pointer that points to the next node. Use while loop
+that runs body as long as head node is not null to loop through
+all the nodes in the list. Free the nodes content then have 
+next node point to the current head nodes next. Free the current
+head node.
+Complete
+Actual Time	00h : 40m
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+The main thing I was missing and having trouble with was forgetting
+to update the node working pointer to point to the next node which
+would be the new head of the linked list as your deleting nodes.
+
+================================================================
+add_node_after_current
+Start
+Estimated Time	01h : 30m
+Plan:
+(Order of implementation, testing approach, etc.)
+Check that parameters passed are not null. Then check if current
+node is null if so call add_node_at_head. Otherwise, create a new
+node and have the new nodes next point to the currents next. Then,
+have the currents next point to the new node. Then have the new 
+nodes previous point to the current. If the new nodes next is 
+null, meaning were at the end of the list then set the tail 
+of the list to be the new node. 
+Complete
+Actual Time	01h : 15m
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+I had to keep messing around with how I was trying to put the 
+new node inbetween two nodes (current and currents next) and 
+also forgot the case when current may be the last node in the list.
+So I ended up making it a condition and if it was true then set 
+the new node to the current and the lists tail.
+
+================================================================
+find_word
+Start
+Estimated Time	01h : 30m
+Plan:
+(Order of implementation, testing approach, etc.)
+Check that parameters are valid. Loop through every node in
+the list and use strcmp to check if the word is equal to any node
+in the list. If its not equal then check to see where we are at in the
+list and set the plist current to correct node or null if at head tail
+if at the end of the list.
+Complete
+Actual Time	02h : 00m
+Observations:
+(Lessons learned, problems encountered, obstacles overcome, etc.)
+The problem Ive encountered is that I cannot figure out how to determine
+where to set pcurrent when the word is not in the list.
+
+================================================================
